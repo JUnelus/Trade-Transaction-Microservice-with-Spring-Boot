@@ -37,7 +37,7 @@ Make sure you have the following installed on your local machine:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/trade-microservice.git
+   git clone https://github.com/JUnelus/trade-microservice.git
    cd trade-microservice
    ```
 
