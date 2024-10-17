@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trade-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: trade-app
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081

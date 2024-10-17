@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trade-app
+  template:
+    metadata:
+      labels:
+        app: trade-app
+    spec:
+      containers:
+        - name: trade-container
+          image: trade-microservice:latest
+          ports:
+            - containerPort: 8081
