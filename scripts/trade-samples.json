@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "AAPL",
+    "side": "BUY",
+    "quantity": 100,
+    "price": 189.25
+  },
+  {
+    "symbol": "MSFT",
+    "side": "SELL",
+    "quantity": 75,
+    "price": 412.10
+  },
+  {
+    "symbol": "NVDA",
+    "side": "BUY",
+    "quantity": 50,
+    "price": 915.45
+  },
+  {
+    "symbol": "AMZN",
+    "side": "SELL",
+    "quantity": 30,
+    "price": 182.33
+  },
+  {
+    "symbol": "JPM",
+    "side": "BUY",
+    "quantity": 120,
+    "price": 198.70
+  }
+]
+

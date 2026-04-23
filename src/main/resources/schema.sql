@@ -1,6 +1,10 @@
-CREATE TABLE TRADE (
-                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                       type VARCHAR(255),
-                       quantity INT,
-                       price DOUBLE
+CREATE TABLE trades (
+    id BIGSERIAL PRIMARY KEY,
+    symbol VARCHAR(20) NOT NULL,
+    side VARCHAR(10) NOT NULL,
+    quantity INT NOT NULL,
+    price NUMERIC(19,4) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL
 );

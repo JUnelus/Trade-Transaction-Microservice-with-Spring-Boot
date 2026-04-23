@@ -1,11 +1,17 @@
-# Use an official Java runtime as a parent image
-FROM openjdk:11-jdk-slim
+FROM maven:3.9.9-eclipse-temurin-21 AS build
+WORKDIR /workspace
 
-# Set the working directory inside the container
+COPY pom.xml mvnw mvnw.cmd ./
+COPY .mvn .mvn
+COPY src src
+
+RUN ./mvnw -q -DskipTests package
+
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
-# Copy the project JAR file into the container
-COPY target/trade-microservice-0.0.1-SNAPSHOT.jar /app/trade-microservice.jar
+COPY --from=build /workspace/target/trade-microservice-0.0.1-SNAPSHOT.jar app.jar
 
-# Run the JAR file
-ENTRYPOINT ["java", "-jar", "/app/trade-microservice.jar"]
+EXPOSE 8081
+
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
